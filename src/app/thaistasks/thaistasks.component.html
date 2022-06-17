@@ -1,0 +1,18 @@
+<h2> TAREFAS </h2>
+
+<label> Tarefas </label>
+
+<input
+  type="text"
+  #nome
+/>
+<button (click)="tasks.adicionarTarefa(nome.value);nome.value=''">INCLUIR</button>
+
+<h3>Lista de tarefas</h3>
+
+<ul *ngFor="let item of tasks.listarTarefa();index as i">
+  <li>
+    {{ item.tarefa }}
+    <button (click)="this.tasks.removerTarefa(i)">REMOVER</button>
+  </li>
+</ul>
